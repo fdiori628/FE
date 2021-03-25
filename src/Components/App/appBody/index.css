@@ -1,0 +1,21 @@
+.appBody {
+    list-style-type: none;
+    text-align: left;
+    padding-inline-start: 0px;
+    width: 350px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+li button {
+    background-color: rgb(255, 0, 0);
+    
+}
+.item {
+    list-style-type: none;
+}
+
+li {
+    text-align: left;
+    margin-left: 290px;
+    width: 350px;
+}

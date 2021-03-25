@@ -1,0 +1,18 @@
+.appFooter{
+    width: 380px;
+    text-align: left;
+    margin: auto;
+    border-top: burlywood solid 1px;
+    padding: 5px;
+
+}
+
+.appFooter button {
+    background-color: rgb(236, 135, 135);
+    margin-left: 200px;
+}
+
+.appFooter input {
+    margin-left: 5px;
+    margin-right: 5px;
+}
