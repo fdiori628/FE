@@ -19,3 +19,8 @@ li {
     margin-left: 290px;
     width: 350px;
 }
+
+li span {
+    font-size: 19px;
+    color: rgb(110, 58, 9);
+}
