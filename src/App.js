@@ -10,10 +10,10 @@ class App extends React.Component {
 
   state = {
     todos: [
-      { id: "001", name: 'xxxxxx1', done: false },
-      { id: "002", name: 'xxxxxx2', done: false },
-      { id: "003", name: 'xxxxxx3', done: true },
-      { id: "004", name: 'xxxxxx4', done: false },
+      // { id: "001", name: 'xxxxxx1', done: false },
+      // { id: "002", name: 'xxxxxx2', done: false },
+      // { id: "003", name: 'xxxxxx3', done: true },
+      // { id: "004", name: 'xxxxxx4', done: false },
     ]
   }
 
@@ -51,7 +51,6 @@ class App extends React.Component {
       let myIndex = myTodos.indexOf(todo)
 
       if (todo.id === id) {
-        console.log('delete')
         myTodos.splice(myIndex, 1)
       }
 
@@ -80,6 +79,15 @@ class App extends React.Component {
     })
   }
 
+  handleDeleteAll = ()=>{
+    let newTodos = []
+
+    this.setState(
+      {todos:newTodos}
+    )
+
+  }
+
 
   render() {
     return (
@@ -89,9 +97,9 @@ class App extends React.Component {
           <AppHeader addToDo={this.addTodo} />
           {/* <AppBody todos={this.state.todos} handlecheck={this.handlecheck} handleDelete={this.handleDelete}  /> */}
           <List todos = {this.state.todos} handlecheck={this.handlecheck} handleDelete={this.handleDelete}/>
-          <AppFooter handleSelectAll = {this.handleSelectAll} />
+          <AppFooter todos = {this.state.todos} handleSelectAll = {this.handleSelectAll} handleDeleteAll = {this.handleDeleteAll}/>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     )
   }
