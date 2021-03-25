@@ -10,10 +10,10 @@ class App extends React.Component {
 
   state = {
     todos: [
-      // { id: "001", name: 'xxxxxx1', done: false },
-      // { id: "002", name: 'xxxxxx2', done: false },
-      // { id: "003", name: 'xxxxxx3', done: true },
-      // { id: "004", name: 'xxxxxx4', done: false },
+      { id: "001", name: 'Gaming', done: false },
+      { id: "002", name: 'Coding', done: false },
+      { id: "003", name: 'Learning', done: false },
+      { id: "004", name: 'Shopping', done: false },
     ]
   }
 
