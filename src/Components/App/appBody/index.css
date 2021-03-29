@@ -8,6 +8,7 @@
 }
 li button {
     background-color: rgb(255, 0, 0);
+    height: 30px; width: 60px;
     
 }
 .item {
