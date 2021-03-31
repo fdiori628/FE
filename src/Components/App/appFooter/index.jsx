@@ -14,16 +14,17 @@ export default class AppFooter extends Component {
 
     handCheckAll = ()=>{
         const {todos} = this.props
-        let my_status = ''
+        let my_status = 0
 
         todos.map((todo)=>{
 
-            if (todo.done === true) {my_status = true} else {my_status = false}
+            if (todo.done === true) {my_status ++}
             return ''
         })
 
-        return my_status
+        if (my_status === todos.length) {return true} else {return false}
 
+        
     }
 
     render() {
