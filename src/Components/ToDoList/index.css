@@ -1,0 +1,14 @@
+.ToDoList {
+    position: relative;
+    width: 921px;
+    height: 1048px;
+    text-align: center;
+    align-items: center;
+    background: #ffffff;
+    margin: auto;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
