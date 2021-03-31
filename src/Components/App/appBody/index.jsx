@@ -42,7 +42,7 @@ export default class AppBody extends Component {
         return (
             <li className='item' style={flag ? { backgroundColor: "#ddd" } : { backgroundColor: "white" }} onMouseOver={this.handleMouseOver(true)} onMouseLeave={this.handleMouseOver(false)}>
                 <input type="checkbox" checked={todo.done} onChange={this.handleCheck(todo.id)} />
-                <span style={{ margin: "5px" }}>{todo.name}</span>
+                <span>{todo.name}</span>
                 <button onClick={this.handleDelete(todo.id)} style={flag ? { display: "inline" } : { display: "none" }}>Delete</button>
             </li>
         )

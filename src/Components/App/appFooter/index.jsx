@@ -22,7 +22,12 @@ export default class AppFooter extends Component {
             return ''
         })
 
-        if (my_status === todos.length) {return true} else {return false}
+        if (my_status === 0) 
+            {return false} else if (my_status === todos.length){
+                return true
+            }else {
+                return false
+            }
 
         
     }
