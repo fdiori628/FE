@@ -1,0 +1,9 @@
+.Search {
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+}
+.Search input {
+    font-size:medium;
+}
