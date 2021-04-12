@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css'
 import axios from 'axios'
+import PubSub from 'pubsub-js'
 
 class Search extends Component {
 
@@ -10,14 +11,20 @@ class Search extends Component {
             try {
                 let data = await axios({
                     method:'GET',
-                    url:"http://localhost:3001/posts/" + para
+                    url:"http://localhost:3001/" + para
                 })
 
                 let res = data.data;
+
+                // console.log(res)
+
+                PubSub.publish('personInfo', res)
             }catch(err){
                 
             }
         }
+
+        getData(searchPara)
     }
 
 
