@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import './index.css'
+import axios from 'axios'
 
 class Search extends Component {
 
     Search = ()=>{
         const searchPara  = this.input1.value
-        console.log(searchPara)
+        async function getData(para){
+            try {
+                let data = await axios({
+                    method:'GET',
+                    url:"http://localhost:3001/posts/" + para
+                })
+
+                let res = data.data;
+            }catch(err){
+                
+            }
+        }
     }
 
 

@@ -1,6 +1,10 @@
 .list {
     height: 800px;
-    width: 800px;
+    width: 400px;
     text-align: center;
-    line-height: 800px;
+}
+
+.list li {
+    list-style: none;
+    width: 200px;
 }
