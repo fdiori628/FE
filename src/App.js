@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Githubsearch from './Components/gitHubSearch'
+import NewToDoList from './Components/newToDoList/'
 
 class App extends React.Component {
 
@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Githubsearch />
+        <NewToDoList />
       </div>
     )
   }

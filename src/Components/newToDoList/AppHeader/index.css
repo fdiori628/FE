@@ -1,0 +1,13 @@
+.appheader {
+    width: 700px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+}
+
+.appheader input {
+    height: 30px;
+    width: 170px;
+    outline: none;
+    color: teal;
+}
