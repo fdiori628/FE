@@ -1,13 +1,14 @@
 .appheader {
+    margin-top: 100px;
     width: 700px;
-    height: 200px;
     text-align: center;
-    line-height: 200px;
 }
 
 .appheader input {
     height: 30px;
     width: 170px;
     outline: none;
-    color: teal;
+    color: rgb(9, 87, 87);
+    border-radius: 10px;
+    border: rgb(160, 39, 39) sole 1px;
 }

@@ -9,7 +9,9 @@ export default class NewToDoList extends Component {
         return (
             <div className="container">
                 <AppHeader />
-                <AppList />
+                <div className="applist">
+                    <AppList />
+                </div>
                 <AppFooter />
             </div>
         )
