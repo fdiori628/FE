@@ -34,13 +34,16 @@ class Item extends Component {
     }
 
     render() {
-        const name = this.props.name
+        const todo = this.props.todo
         return (
 
             <div className="item">
                 <ul>
                     <li onMouseOver={this.handleMouseOver(true)} onMouseLeave={this.handleMonseLeave(false)} style={this.state.flag ? {backgroundColor:"#ddd"}:{backgroundColor:"white"}}>
-                        <span>{name}</span>
+                        <div>
+                            <input type="checkbox" defaultChecked={todo.done} />
+                            <span>{todo.name}</span>
+                        </div>
                         <button style={this.state.flag ? { display: "inline" } : { display: "none" }}>delete</button>
                     </li>
                 </ul>

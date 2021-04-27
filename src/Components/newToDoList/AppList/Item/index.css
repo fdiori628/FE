@@ -16,3 +16,7 @@
 .item button{
     background-color: brown;
 }
+
+.item span{
+    margin-left: 5px;
+}
