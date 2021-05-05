@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css'
-// import PubSub from 'pubsub-js'
+import PubSub, { publish } from 'pubsub-js'
 
 
 class Item extends Component {
@@ -32,6 +32,15 @@ class Item extends Component {
         )
     }
 
+    handleDelete = (id)=>{
+        return (
+            ()=>{
+                publish('id', id)
+            }
+        )
+
+    }
+
     render() {
         const todo = this.props.todo
         return (
@@ -43,7 +52,7 @@ class Item extends Component {
                             <input type="checkbox" defaultChecked={todo.done} />
                             <span>{todo.name}</span>
                         </div>
-                        <button style={this.state.flag ? { display: "inline" } : { display: "none" }}>delete</button>
+                        <button style={this.state.flag ? { display: "inline" } : { display: "none" }} onClick = {this.handleDelete(todo.id)}>delete</button>
                     </li>
                 </ul>
             </div>

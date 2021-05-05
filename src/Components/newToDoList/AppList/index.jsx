@@ -23,7 +23,23 @@ export default class AppList extends Component {
                 todos:newToDos
             })
         })
+
+        this.token2 = PubSub.subscribe('id', (_, data) => {
+            let {todos} = this.state
+            todos.map((todo)=>{
+                if (todo.id === data){
+                    let myIndex = todos.indexOf(todo)
+                    todos.splice(myIndex, 1)
+                }
+                this.setState({
+                    todos:todos
+                })
+                return ''
+            })
+        })
     }
+
+
       
     render() {
         const { todos } = this.state
