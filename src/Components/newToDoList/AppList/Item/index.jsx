@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
 import './index.css'
-import PubSub from 'pubsub-js'
+// import PubSub from 'pubsub-js'
 
 
 class Item extends Component {
 
     state = {
-        flag: false
+        flag: false,
     }
-    componentDidMount() {
+    // componentDidMount() {
 
-        this.token = PubSub.subscribe('itemName', (_, data) => {
-            this.setState({
-                itemName: data
-            })
-        })
-    }
+    //     this.token = PubSub.subscribe('itemName', (_, data) => {
+    //         this.setState({
+    //             itemName: data
+    //         })
+    //     })
+    // }
 
     handleMouseOver = (status) => {
         return (
             () => {
                 this.setState({ flag: status })
-                console.log(this.state.flag)
             }
         )
     }

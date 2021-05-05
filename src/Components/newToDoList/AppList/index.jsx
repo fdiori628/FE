@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './index.css'
 import Item from './Item'
+import PubSub from 'pubsub-js'
 
 export default class AppList extends Component {
 
@@ -9,6 +10,19 @@ export default class AppList extends Component {
             { id: 1, name: 'working', done: true },
             { id: 2, name: 'sporting', done: false }
         ]
+    }
+
+    componentDidMount() {
+
+        this.token = PubSub.subscribe('newToDo', (_, data) => {
+            let {todos} = this.state
+
+            let newToDos = [...todos, data]
+
+            this.setState({
+                todos:newToDos
+            })
+        })
     }
       
     render() {
