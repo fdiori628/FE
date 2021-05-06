@@ -12,7 +12,10 @@ export default class AppList extends Component {
         ]
     }
 
+
     componentDidMount() {
+
+        PubSub.publish('todos', this.state.todos)
 
         this.token = PubSub.subscribe('newToDo', (_, data) => {
             let {todos} = this.state
@@ -43,10 +46,14 @@ export default class AppList extends Component {
       
     render() {
         const { todos } = this.state
+
         return (
             todos.map((todo) => {
                 return (
-                    <Item key={todo.id} todo={todo}/>
+
+                        <Item key={todo.id} todo={todo} />
+
+
                 )
             })
         )
