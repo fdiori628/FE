@@ -41,6 +41,14 @@ class Item extends Component {
 
     }
 
+    handleCheck = (id)=>{
+        return (
+            ()=>{
+                publish('checkId', id)
+            }
+        )
+    }
+
     render() {
         const todo = this.props.todo
         return (
@@ -49,7 +57,7 @@ class Item extends Component {
                 <ul>
                     <li onMouseOver={this.handleMouseOver(true)} onMouseLeave={this.handleMonseLeave(false)} style={this.state.flag ? {backgroundColor:"#ddd"}:{backgroundColor:"white"}}>
                         <div>
-                            <input type="checkbox" defaultChecked={todo.done} />
+                            <input type="checkbox" defaultChecked={todo.done} onChange = {this.handleCheck(todo.id)}/>
                             <span>{todo.name}</span>
                         </div>
                         <button style={this.state.flag ? { display: "inline" } : { display: "none" }} onClick = {this.handleDelete(todo.id)}>delete</button>

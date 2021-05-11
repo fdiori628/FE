@@ -8,7 +8,9 @@ export default class AppList extends Component {
     state = {
         todos: [
             { id: 1, name: 'working', done: true },
-            { id: 2, name: 'sporting', done: false }
+            { id: 2, name: 'sporting', done: true },
+            { id: 3, name: 'sporting2', done: false }
+
         ]
     }
 
@@ -40,6 +42,29 @@ export default class AppList extends Component {
                 return ''
             })
         })
+
+        this.token3 = PubSub.subscribe('checkId', (_, data)=>{
+            let {todos} = this.state;
+
+            todos.map((todo)=>{
+        
+                if (todo.id === data) {
+                    todo.done = !todo.done
+                }
+
+                return ''
+            })
+
+            this.setState({
+                todos:todos
+            })
+
+        })
+    }
+
+    componentDidUpdate() {
+
+        PubSub.publish('todos', this.state.todos)
     }
 
 
