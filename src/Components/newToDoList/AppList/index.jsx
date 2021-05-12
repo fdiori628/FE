@@ -67,6 +67,12 @@ export default class AppList extends Component {
         PubSub.publish('todos', this.state.todos)
     }
 
+    componentWillUnmount(){
+        PubSub.unsubscribe(this.token)
+        PubSub.unsubscribe(this.token2)
+        PubSub.unsubscribe(this.token3)
+    }
+
 
       
     render() {

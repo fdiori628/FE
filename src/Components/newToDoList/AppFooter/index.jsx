@@ -19,9 +19,9 @@ export default class AppFooter extends Component {
 
     // }
 
-    // componentWillUnmount() {
-    //     PubSub.unsubscribe(this.token)
-    // }
+    componentWillUnmount() {
+        PubSub.unsubscribe(this.token)
+    }
 
 
     render() {
