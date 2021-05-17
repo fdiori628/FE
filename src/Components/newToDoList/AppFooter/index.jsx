@@ -22,6 +22,7 @@ export default class AppFooter extends Component {
                 if (x.done === true) {
                     selected = selected + 1;
                 }
+                return ''
             })
 
             this.setState({
@@ -31,10 +32,6 @@ export default class AppFooter extends Component {
         })
     }
 
-
-    componentWillUnmount() {
-        PubSub.unsubscribe(this.token)
-    }
 
     handleCheckAll = ()=>{
 
@@ -54,8 +51,7 @@ export default class AppFooter extends Component {
             return ''
         })
 
-        console.log(statusNumber)
-        console.log(tempTodos.length)
+
         if(statusNumber === 0) {
             return false
         }else if(statusNumber === tempTodos.length) {
@@ -64,6 +60,11 @@ export default class AppFooter extends Component {
             return false
         }
 
+    }
+
+    componentWillUnmount() {
+        PubSub.unsubscribe(this.token)
+        PubSub.unsubscribe(this.token2)
     }
 
 

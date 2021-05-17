@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css'
-import PubSub, { publish } from 'pubsub-js'
+import  { publish } from 'pubsub-js'
 
 
 class Item extends Component {
@@ -8,14 +8,6 @@ class Item extends Component {
     state = {
         flag: false,
     }
-    // componentDidMount() {
-
-    //     this.token = PubSub.subscribe('itemName', (_, data) => {
-    //         this.setState({
-    //             itemName: data
-    //         })
-    //     })
-    // }
 
     handleMouseOver = (status) => {
         return (
