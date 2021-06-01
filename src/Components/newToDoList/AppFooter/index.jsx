@@ -62,6 +62,33 @@ export default class AppFooter extends Component {
 
     }
 
+    handleChange = (e)=>{
+        let checkStatus = e.target.checked;
+        this.token3 = PubSub.subscribe('todos', (_, data)=>{
+            this.setState({
+                tempTodos: data
+            })
+        })
+        let myTodos = this.state.tempTodos;
+
+        myTodos.map((myTodo)=>{
+            myTodo.done = checkStatus;
+            return ''
+        })
+
+        this.setState({
+            tempTodos:myTodos
+        })
+
+        PubSub.publish('selectTodos', this.state.tempTodos)
+    }
+
+    handleDeleteAll =()=>{
+        let deleteTodos = []
+
+        PubSub.publish('deleteTodos', deleteTodos)
+    }
+
     componentWillUnmount() {
         PubSub.unsubscribe(this.token)
         PubSub.unsubscribe(this.token2)
@@ -72,8 +99,9 @@ export default class AppFooter extends Component {
 
         return (
             <div className="appfooter">
-                <input type="checkbox" defaultChecked = {this.handleCheckAll()}/>
+                <input type="checkbox" checked = {this.handleCheckAll()} onChange = {this.handleChange}/>
                 <span>{this.state.selectedVaule} / {this.state.totalTodo}</span>
+                <button onClick={this.handleDeleteAll}>Delete All</button>
             </div>
         )
     }

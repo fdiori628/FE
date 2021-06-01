@@ -61,6 +61,21 @@ export default class AppList extends Component {
             })
 
         })
+
+
+        this.token4 = PubSub.subscribe('selectTodos', (_, data)=>{
+            this.setState((({
+                todos:data
+            })))
+
+            console.log(this.state.todos)
+        })
+
+        this.token5 = PubSub.subscribe('deleteTodos', (_, data)=>{
+            this.setState({
+                todos:[]
+            })
+        })
     }
 
     componentDidUpdate() {
@@ -72,6 +87,7 @@ export default class AppList extends Component {
         PubSub.unsubscribe(this.token)
         PubSub.unsubscribe(this.token2)
         PubSub.unsubscribe(this.token3)
+        PubSub.unsubscribe(this.token4)
     }
 
 
