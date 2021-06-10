@@ -30,6 +30,13 @@ export default class AppFooter extends Component {
                 selectedVaule: selected
             })
         })
+
+        this.token2 = PubSub.subscribe('todos', (_, data) => {
+            this.setState({
+                tempTodos: data
+            })
+        })
+
     }
 
 
@@ -37,11 +44,11 @@ export default class AppFooter extends Component {
 
         let statusNumber = 0
 
-        this.token2 = PubSub.subscribe('todos', (_, data)=>{
-            this.setState({
-                tempTodos:data
-            })
-        })
+        // this.token2 = PubSub.subscribe('todos', (_, data)=>{
+        //     this.setState({
+        //         tempTodos:data
+        //     })
+        // })
 
         let {tempTodos} = this.state;
         tempTodos.map((todo)=>{
@@ -92,6 +99,7 @@ export default class AppFooter extends Component {
     componentWillUnmount() {
         PubSub.unsubscribe(this.token)
         PubSub.unsubscribe(this.token2)
+        PubSub.unsubscribe(this.token3)
     }
 
 
